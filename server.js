@@ -49,26 +49,7 @@ app.get('/su/mariokart/api/lastEvents', function (req, res, next) {
 
 
 app.get('/su/mariokart/api/bananaPeelsPositions', function (req, res, next) {
-  // var positions = [];
   var positions = fake.getCurrentBananasPositions();
-  
-  // positions.push({ lat: 37.567516
-                 // , lon: -122.324601
-                 // , droppedBy: { id: 1234, name: 'Yohan' }
-                 // , age: 23
-                 // });
-                 
-  // positions.push({ lat: 37.568749
-                 // , lon: -122.326746
-                 // , droppedBy: { id: 1234, name: 'Yohan' }
-                 // , age: 5
-                 // });
-
-  // positions.push({ lat: 37.566717
-                 // , lon: -122.32798
-                 // , droppedBy: { id: 1111, name: 'Louis' }
-                 // , age: 12
-                 // });
                 
   return res.json(positions);
 });
