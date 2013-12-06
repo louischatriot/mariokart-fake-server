@@ -1,7 +1,7 @@
 var express = require('express')
   , app = express()
   , config = require('./lib/config')
-  , cars = require('./lib/car')
+  , fake = require('./lib/fake')
   ;
   
 app.use(express.bodyParser());
@@ -75,7 +75,7 @@ app.get('/su/mariokart/api/bananaPeelsPositions', function (req, res, next) {
 
 app.get('/su/mariokart/api/carsPositions', function (req, res, next) {
   var positions = []
-    , carPos = cars.getCurrentCarsPosition()
+    , carPos = fake.getCurrentCarsPositions()
     ;
   
   positions.push({ lat: carPos.car2.lat
@@ -89,6 +89,12 @@ app.get('/su/mariokart/api/carsPositions', function (req, res, next) {
                  });                
                 
   return res.json(positions);
+});
+
+
+app.get('/su/mariokart/api/resetTime', function(req, res, next) {
+  cars.resetTime();
+  return res.json({ success: true });
 });
 
 
