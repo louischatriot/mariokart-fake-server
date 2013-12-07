@@ -24,25 +24,25 @@ app.get('/su/mariokart/api/leaderboard', function (req, res, next) {
 
 
 app.get('/su/mariokart/api/lastEvents', function (req, res, next) {
-  var events = []
+  var events = fake.getCurrentEventLog();
   
-  events.push({ type: "BANANA_PEEL_DROPPED"
-              , timestamp: new Date(2013, 11, 6, 10, 25, 36)
-              , byUser: { id: 1234, name: "Yohan" }
-              , additionalData: {}
-              });
+  // events.push({ type: "BANANA_PEEL_DROPPED"
+              // , timestamp: new Date(2013, 11, 6, 10, 25, 36)
+              // , byUser: { id: 1234, name: "Yohan" }
+              // , additionalData: {}
+              // });
 
-  events.push({ type: "BANANA_PEEL_DROPPED"
-              , timestamp: new Date(2013, 11, 6, 10, 52, 10)
-              , byUser: { id: 1234, name: "Yohan" }
-              , additionalData: {}
-              });
+  // events.push({ type: "BANANA_PEEL_DROPPED"
+              // , timestamp: new Date(2013, 11, 6, 10, 52, 10)
+              // , byUser: { id: 1234, name: "Yohan" }
+              // , additionalData: {}
+              // });
 
-  events.push({ type: "SLIPPED_ON_BANANA_PEEL"
-              , timestamp: new Date(2013, 11, 6, 11, 8, 54)
-              , byUser: { id: 1111, name: "Louis" }
-              , additionalData: { droppedBy: { id: 1234, name: "Yohan" } }
-              });              
+  // events.push({ type: "SLIPPED_ON_BANANA_PEEL"
+              // , timestamp: new Date(2013, 11, 6, 11, 8, 54)
+              // , byUser: { id: 1111, name: "Louis" }
+              // , additionalData: { droppedBy: { id: 1234, name: "Yohan" } }
+              // });              
 
   return res.json(events);
 });
